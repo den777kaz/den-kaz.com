@@ -16,10 +16,10 @@ jobs:
           node-version: '14'
 
       - name: 🔨 Build Project
-        run: |
-          npm install -g gulp
-          npm install
-           gulp build
+        run: npm install -g gulp
+        run: npm install
+        run: npm run build
+         
       - name: 📂 Sync files
         uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
         with:
