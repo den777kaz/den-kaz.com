@@ -1,0 +1,117 @@
+.portfolio {
+  background-color: $bgPrim;
+  & h3 {
+    color: $headTextPrim2;
+  }
+  & .works-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  p {
+    color: $textPrim;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+  & .work {
+    position: relative;
+    padding: 3rem 2rem 2rem 2rem;
+    // margin-bottom: 2rem;
+    border-radius: 3px;
+    transition: all 0.5s;
+    z-index: 2;
+    cursor: pointer;
+    will-change: transform;
+
+    &-image img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      object-fit: cover;
+    }
+    &-desc {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      transition: inherit;
+    }
+    &-desc h4 {
+      color: $headTextPrim2;
+      font-size: 2rem;
+      transition: inherit;
+    }
+    &-desc p {
+      color: $textPrim;
+      transition: inherit;
+    }
+    &-tech {
+      display: flex;
+      margin-bottom: 1rem;
+      color: $headTextPrim2;
+
+      li {
+        color: $textPrim;
+        margin-left: 2rem;
+        list-style-type: disc;
+      }
+      li:nth-child(1) {
+        list-style-type: none;
+        margin-left: 0.6rem;
+      }
+    }
+
+    &-line {
+      width: 80%;
+      height: 1px;
+      margin: auto;
+      margin-top: 1.5rem;
+      background-color: $textPrim;
+      transition: inherit;
+      opacity: 0.6;
+    }
+  }
+
+  .work:hover {
+    transition-delay: 0.6s;
+    background-color: darken($bgPrim, 3%);
+  }
+  // & .work:after {
+  //   content: '';
+  //   position: absolute;
+  //   width: 100%;
+  //   top: 0;
+  //   left: 0;
+  //   height: 100%;
+  //   background-color: $bgSec;
+  //   transform-origin: right;
+  //   transform: scaleX(0);
+  //   opacity: 0;
+  //   transition: inherit;
+  //   z-index: -1;
+  // }
+  // & .work:hover:after {
+  //   transition-delay: 0.6s;
+  //   transform-origin: left;
+  //   transform: scaleX(1);
+  //   opacity: 1;
+  // }
+  // & .work:hover h4 {
+  //   color: $headTextPrim;
+  //   transition-delay: 0.6s;
+  // }
+  // & .work:hover p {
+  //   color: $textSec;
+  //   transition-delay: 0.6s;
+  // }
+  // & .work:hover li {
+  //   color: $textSec;
+  //   transition-delay: 0.9s;
+  // }
+  // & .work:hover .work-line {
+  //   background-color: $bgPrim;
+  //   transition-delay: 0.6s;
+  // }
+}

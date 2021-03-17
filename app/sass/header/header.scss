@@ -1,0 +1,31 @@
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 2rem 0 0.1rem 0;
+}
+
+.navbar,
+.hamb-menu {
+  display: flex;
+  justify-content: flex-end;
+  color: darken($headTextPrim2, 5%);
+
+  & > * + * {
+    margin-left: 2rem;
+  }
+
+  & a {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+
+    &:hover {
+      color: $headTextSec;
+    }
+  }
+}
+.hamb-menu {
+  display: none;
+}

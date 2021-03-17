@@ -1,0 +1,18 @@
+.about {
+  &-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+  &-text p {
+    margin-bottom: 1rem;
+    // padding-right: 3rem;
+    max-width: 436px;
+  }
+  &-title {
+    padding-right: 5%;
+    &-image {
+      padding-right: 5%;
+    }
+  }
+}

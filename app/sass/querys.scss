@@ -1,0 +1,140 @@
+@media only screen and (max-width: 1100px) {
+  .col2 {
+    width: 100%;
+  }
+
+  section {
+    padding: 4rem 0;
+  }
+  // padding
+  .pr5p {
+    padding-right: 0;
+  }
+  .pl5p {
+    padding-left: 0;
+  }
+
+  .hero-info {
+    padding: 10rem 0 6rem 0;
+    z-index: 1;
+  }
+  .hero-photo {
+    position: absolute;
+    right: 5%;
+    bottom: 0;
+    width: 420px;
+    z-index: 0;
+  }
+
+  .skills-icons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2rem 0 2rem 0;
+    justify-content: initial;
+    align-items: initial;
+  }
+  .skills-icons-item {
+    margin: 0 0 2rem 0;
+    padding: 0;
+    min-width: 33%;
+  }
+
+  .skills-icons-item:nth-last-child(1) {
+    margin-bottom: 2rem;
+  }
+
+  .lang-item:nth-child(1) {
+    background-color: transparent;
+    display: none;
+  }
+
+  .skills-image {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+
+    & img {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .icons-wrap {
+    // flex-direction: row;
+
+    & .skills-icons-item {
+      flex: 0 0 33%;
+      min-width: 225px;
+    }
+
+    & .skills-icons-item:nth-last-child(1) {
+      margin-bottom: 2rem;
+    }
+  }
+  .lang {
+    padding-top: 2rem;
+  }
+
+  .footer {
+    & .flex {
+      flex-wrap: wrap;
+    }
+  }
+
+  .contact__item {
+    flex: 0 0 33%;
+    min-width: 300px;
+    margin-bottom: 2rem;
+    // margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .header .navbar {
+    display: none;
+  }
+  .header .hamb-menu {
+    display: flex;
+  }
+  .hero {
+    & .social-media {
+      flex-direction: row;
+
+      & > a {
+        margin-top: 0;
+      }
+
+      & > * + * {
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  .btn {
+    // padding: 2rem 2rem;
+    font-size: 1rem;
+  }
+  .hero-photo {
+    right: -30%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .skills-second .lang-item {
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .lang-item:nth-child(3) {
+    margin-right: 0;
+  }
+  .portfolio .work {
+    padding: 3rem 0 2rem 0;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+}

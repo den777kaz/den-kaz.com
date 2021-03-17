@@ -1,0 +1,30 @@
+on:
+  push:
+    branches: [master]
+name: 🚀 Deploy website on push Master
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2.3.2
+
+      - name: Use Node.js 14
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14'
+
+      - name: 🔨 Build Project
+        run: |
+          npm install
+          gulp build
+      - name: 📂 Sync files
+        uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
+        with:
+          ftp_host: ftp.hostde30.fornex.host
+          ftp_username: denis@den-kaz.com
+          ftp_password: ${{ secrets.password }}
+          local_source_dir: 'dist'
+          dist_target_dir: '/'
+          delete: 'true'
