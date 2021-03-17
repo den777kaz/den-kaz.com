@@ -19,7 +19,7 @@ jobs:
         run: |
           npm install -g gulp
           npm install
-          npn run build
+          npm run build
 
       - name: 📂 Sync files
         uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
