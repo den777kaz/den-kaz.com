@@ -34,6 +34,17 @@ const portfolio = [
     github: 'https://github.com/den777kaz/netflix',
   },
   {
+    id: 2345,
+    title: 'Small Pizza Shop',
+    subTitle: 'Web Application',
+    desc: '',
+    image: './images/dest/react-pizza.png',
+    bgImage: './images/dest/react-pizza.png',
+    tech: ['React', 'Redux', 'Sass', 'json-server'],
+    website: 'https://shop-pizza.netlify.app',
+    github: 'https://github.com/den777kaz/react-pizza',
+  },
+  {
     id: 4,
     title: 'Pizzeria',
     subTitle: 'Landing Page',
