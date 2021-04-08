@@ -3,115 +3,112 @@
   & h3 {
     color: $headTextPrim2;
   }
-  & .works-wrap {
-    display: flex;
-    flex-wrap: wrap;
-  }
   p {
-    color: $textPrim;
+    color: #d8dde7;
+  }
+  a {
+    text-decoration: underline;
+  }
 
-    a {
-      text-decoration: underline;
+  .webdesign,
+  .frontend {
+    width: 45%;
+    min-width: 450px;
+
+    h4 {
+      font-size: 1.2rem;
+    }
+    &:hover .text-vertcal {
+      color: white;
+      opacity: 0.7;
     }
   }
-  & .work {
-    position: relative;
-    padding: 3rem 2rem 2rem 2rem;
-    // margin-bottom: 2rem;
-    border-radius: 3px;
+  .text-vertcal {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin-right: 20px;
+
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 1.5rem;
+    color: $headTextSec;
+    font-weight: bold;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    opacity: 0.4;
+
+    pointer-events: none;
     transition: all 0.5s;
-    z-index: 2;
-    cursor: pointer;
-    will-change: transform;
 
-    &-image img {
-      position: absolute;
-      top: 0;
-      left: 0;
+    // -webkit-text-stroke: 1px $headTextSec;
+    // -webkit-text-fill-color: transparent;
+  }
+
+  .work {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    margin-bottom: 5px;
+    align-items: flex-start;
+
+    &__image {
+      width: 160px;
+      // height: 100%;
+      margin-right: 10px;
+
+      img {
+        display: block;
+        position: absolute;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    &__content {
       width: 100%;
-      object-fit: cover;
-    }
-    &-desc {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      transition: inherit;
-    }
-    &-desc h4 {
-      color: $headTextPrim2;
-      font-size: 2rem;
-      transition: inherit;
-    }
-    &-desc p {
-      color: $textPrim;
-      transition: inherit;
-    }
-    &-tech {
-      display: flex;
-      margin-bottom: 1rem;
-      color: $headTextPrim2;
+      // padding: 1rem;
 
-      li {
-        color: $textPrim;
-        margin-left: 2rem;
-        list-style-type: disc;
+      h4 {
+        color: white;
+        // font-size: 1.5rem;
       }
-      li:nth-child(1) {
-        list-style-type: none;
-        margin-left: 0.6rem;
+      .tech-list {
+        // display: flex;
+
+        & > * + * {
+          margin-left: 15px;
+        }
+
+        li {
+          display: inline-block;
+          list-style: square;
+          color: #d8dde7;
+          font-size: 1.1rem;
+        }
+      }
+      .links {
+        display: flex;
+        justify-content: flex-end;
+        & > * + * {
+          margin-left: 20px;
+        }
+
+        a {
+          // color: white;
+          // color: #c9cbd1;
+          color: #d8dde7;
+          letter-spacing: 1px;
+
+          &:hover {
+            color: $headTextSec;
+          }
+        }
       }
     }
 
-    &-line {
-      width: 80%;
-      height: 1px;
-      margin: auto;
-      margin-top: 1.5rem;
-      background-color: $textPrim;
-      transition: inherit;
-      opacity: 0.6;
+    &:hover {
+      transition-delay: 0.3s;
+      background-color: darken($bgPrim, 3%);
     }
   }
-
-  .work:hover {
-    transition-delay: 0.6s;
-    background-color: darken($bgPrim, 3%);
-  }
-  // & .work:after {
-  //   content: '';
-  //   position: absolute;
-  //   width: 100%;
-  //   top: 0;
-  //   left: 0;
-  //   height: 100%;
-  //   background-color: $bgSec;
-  //   transform-origin: right;
-  //   transform: scaleX(0);
-  //   opacity: 0;
-  //   transition: inherit;
-  //   z-index: -1;
-  // }
-  // & .work:hover:after {
-  //   transition-delay: 0.6s;
-  //   transform-origin: left;
-  //   transform: scaleX(1);
-  //   opacity: 1;
-  // }
-  // & .work:hover h4 {
-  //   color: $headTextPrim;
-  //   transition-delay: 0.6s;
-  // }
-  // & .work:hover p {
-  //   color: $textSec;
-  //   transition-delay: 0.6s;
-  // }
-  // & .work:hover li {
-  //   color: $textSec;
-  //   transition-delay: 0.9s;
-  // }
-  // & .work:hover .work-line {
-  //   background-color: $bgPrim;
-  //   transition-delay: 0.6s;
-  // }
 }

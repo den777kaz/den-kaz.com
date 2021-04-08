@@ -1,0 +1,83 @@
+{
+  "webdesign": [
+    {
+      "id": 1243,
+      "imageUrl": "./images/dest/australien-bg.png",
+      "title": "Australien Website",
+      "desc": "Das Schulprojekt",
+      "links": [
+        { "name": "Figma", "path": "https://github.com/den777kaz/australien" },
+        { "name": "PDF", "path": "https://github.com/den777kaz/australien" },
+        { "name": "Live", "path": "https://github.com/den777kaz/australien" }
+      ]
+    },
+    {
+      "id": 2363,
+      "imageUrl": "./images/dest/pizza-bg.png",
+      "title": "Pizzeria",
+      "desc": "Landingpage",
+      "links": [
+        { "name": "Figma", "path": "https://github.com/den777kaz/australien" },
+        { "name": "PDF", "path": "https://github.com/den777kaz/australien" },
+        { "name": "Live", "path": "https://github.com/den777kaz/australien" }
+      ]
+    },
+    {
+      "id": 356778,
+      "imageUrl": "./images/dest/clinic-bg.png",
+      "title": "Clinic",
+      "desc": "Landingpage",
+      "figma": "<iframe style='border: none;' width='800' height='450' src='https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fkr7KTPzKxtiWOSvVvsxpNI%2Fclinic%3Fnode-id%3D0%253A1' allowfullscreen></iframe>",
+      "links": [
+        { "name": "Figma", "path": "https://github.com/den777kaz/australien" },
+        { "name": "PDF", "path": "https://github.com/den777kaz/australien" }
+      ]
+    }
+  ],
+  "frontend": [
+    {
+      "id": 85434,
+      "imageUrl": "./images/dest/fit-as.png",
+      "title": "Fitness - Multiple page website",
+      "desc": "description",
+      "tech": ["html", "scss", "gulp", "bootstrap 5", "animeJS"],
+      "links": [
+        { "name": "Github", "path": "https://github.com/den777kaz/australien" },
+        { "name": "Website", "path": "https://github.com/den777kaz/australien" }
+      ]
+    },
+    {
+      "id": 75567,
+      "imageUrl": "./images/dest/fit-as.png",
+      "title": "Australien - Landingpage",
+      "desc": "description",
+      "tech": ["html", "css", "js", "gsap"],
+      "links": [
+        { "name": "Github", "path": "https://github.com/den777kaz/australien" },
+        { "name": "Website", "path": "https://github.com/den777kaz/australien" }
+      ]
+    },
+    {
+      "id": 36788,
+      "imageUrl": "./images/dest/fit-as.png",
+      "title": "Netflix Clone - Web Application",
+      "desc": "description",
+      "tech": ["react", "redux", "RestApi", "scss"],
+      "links": [
+        { "name": "Github", "path": "https://github.com/den777kaz/australien" },
+        { "name": "Website", "path": "https://github.com/den777kaz/australien" }
+      ]
+    },
+    {
+      "id": 36788,
+      "imageUrl": "./images/dest/fit-as.png",
+      "title": "Small Pizza Shop - Web Application",
+      "desc": "description",
+      "tech": ["react", "redux", "fakeJSON", "scss"],
+      "links": [
+        { "name": "Github", "path": "https://github.com/den777kaz/australien" },
+        { "name": "Website", "path": "https://github.com/den777kaz/australien" }
+      ]
+    }
+  ]
+}
