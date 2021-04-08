@@ -8,6 +8,7 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
       rel="stylesheet"
@@ -49,11 +50,8 @@
                 data-words='["Webdesigner", "Frontend Developer"]'
                 ></span></p>
               <div class="hero-info__buttons">
-                <a
-                data-aos="fade-in"
-                data-aos-delay="500"
-                href="#contact"
-                ><button class="btn mt3rem" type="button">Kontakt</button></a>
+                <button class="contactBtm btn mt3rem" type="button"  data-aos="fade-in"
+                data-aos-delay="500">Kontakt</button>
                 <a 
                 data-aos="fade-in" 
                 data-aos-delay="650"
@@ -192,23 +190,6 @@
                 </div>
 
                 <div class="skills-icons-item col2" data-aos="fade-up">
-                  <img
-                    src="./images/dest/icons/ai.svg"
-                    alt="adobe illustrator"
-                  />
-                  <div>
-                    <h4>Adobe Illustrator</h4>
-                  </div>
-                </div>
-
-                <div class="skills-icons-item col2" data-aos="fade-up">
-                  <img src="./images/dest/icons/ae.svg" alt="after Effects" />
-                  <div>
-                    <h4>Adobe AfterEffects</h4>
-                  </div>
-                </div>
-
-                <div class="skills-icons-item col2" data-aos="fade-up">
                   <img src="./images/dest/icons/id.svg" alt="adobe inDesegn" />
                   <div>
                     <h4>Adobe InDesign</h4>
@@ -265,16 +246,75 @@
       </section>
       <!-- portfolio -->
 
-      <section id="portfolio" class="portfolio">
+      <!-- v2 -->
+      <section class="portfolio">
         <div class="container">
           <h2 class="mb1rem" data-aos="fade-up">#portfolio</h2>
-          <h3 class="mb1rem" data-aos="fade-up">Übersicht über Projekte</h3>
-          <p class="mb3rem" data-aos="fade-up">mehr finden Sie auf meiner <a href="https://github.com/den777kaz?tab=repositories" target="_blank"> Github</a> Seite.</p>
-          <div class="works-wrap">
-              <!-- js render -->
-        </div>
+            <h3 class="mb1rem" >
+              <span style="display: inline-block;" data-aos="fade-right">Übersicht </span>
+              <span style="display: inline-block;" data-aos="fade-down">über </span>
+              <span style="display: inline-block;" data-aos="fade-left">Projekte</span></h3>
+            <p class="mb3rem" data-aos="fade-up">mehr finden Sie auf meiner <a href="https://github.com/den777kaz?tab=repositories" target="_blank"> Github</a> Seite.</p>
+           
+            <div class="flex wrap space-between mt3rem">
+              <div class="webdesign flex mb3rem">
+                <span class="text-vertcal" data-aos="fade-in">Webdesign</span>
+                <div class="works col1">
+                  
+                  <!-- <div class="work flex" data-aos="fade-up">
+                    <div class="work__image">
+                      <div class="box16-9">
+                        <img src="./images/dest/australien-bg.png" alt="">
+                      </div>
+                    </div>
+                    <div class="work__content">
+                      <h4>Australien Webseite</h4>
+                      <p>description</p>
+                      <div class="links flex mt1rem">
+                        <a href="">Figma</a>
+                        <a href="">PDF</a>
+                        <a href="">Live</a>
+                      </div>
+                    </div>
+                  </div> -->
 
+                </div>
+                
+                
+
+              </div>
+              <div class="frontend flex mb3rem">
+                <span class="text-vertcal" data-aos="fade-in">Frontend</span>
+                <div class="works col1">
+
+                  <!-- <div class="work flex">
+                    <div class="work__image">
+                      <div class="box16-9">
+                        <img src="./images/dest/australien-bg.png" alt="">
+                      </div>
+                    </div>
+                    <div class="work__content">
+                      <h4>Australien Webseite</h4>
+                      <ul class="flex tech-list">
+                        <li>html</li>
+                        <li>css</li>
+                        <li>js</li>
+                        <li>react</li>
+                      </ul>
+                      <div class="links flex mt1rem">
+                        <a href="">Github</a>
+                        <a href="">Website</a>
+                      </div>
+                    </div> -->
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
       </section>
+      
+      <!-- /v2 -->
     </main>
     <footer id="contact" class="footer">
 
@@ -305,8 +345,35 @@
     </footer>
 
     <!-- modal window -->
-    <div class="modal-port modal-bg"></div>
-  
+    <div class="modal">
+      <div class="modal__content">
+        <span class="close-btn">X</span>
+
+        <form class="contactForm">
+
+          <div class="styledInput">
+            <input type="text" name="name" autocomplete="off" required>
+            <label for="name" class="labelName">
+            <span class="contentName">Name</span>
+            </label>
+          </div>
+          <div class="styledInput">
+            <input type="text" name="email" autocomplete="off" required>
+            <label for="email" class="labelName">
+            <span class="contentName">Email</span>
+            </label>
+          </div>
+          <div class="styledTextarea">
+            <textarea class="textarea" name="message"  id="message" placeholder="Message" required></textarea>
+          </div>
+          <div>
+            <button class="btn btn--contact" type="submit">Send</button>
+          </div>
+         
+        </form>
+      </div>
+    </div>
+    <script src="js/render.js"></script>
     <script src="js/app.min.js"></script>
     <script>
       AOS.init({

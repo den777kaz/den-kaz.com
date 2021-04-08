@@ -6,7 +6,7 @@ const browserSync = require('browser-sync').create(); // Подключаем Br
 const concat = require('gulp-concat'); // Подключаем gulp-concat
 const uglify = require('gulp-uglify-es').default; // Подключаем gulp-concat
 const sass = require('gulp-sass'); // Подключаем модули gulp-sass и gulp-less
-const less = require('gulp-less');
+// const less = require('gulp-less');
 const autoprefixer = require('gulp-autoprefixer'); // Подключаем Autoprefixer
 const cleancss = require('gulp-clean-css'); //Подключаем модуль gulp-clean-css
 const imagemin = require('gulp-imagemin'); // Подключаем gulp-imagemin для работы с изображениями
@@ -28,8 +28,8 @@ function scripts() {
     // Берём файлы из источников
     // Пример подключения библиотеки
     'app/js/aos.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
-    'app/js/app.js',
     'app/js/type.js',
+    'app/js/app.js',
   ])
     .pipe(concat('app.min.js')) // Конкатенируем в один файл
     .pipe(uglify()) // Сжимаем JavaScript
@@ -73,6 +73,7 @@ function buildcopy() {
       'app/js/**/*.min.js',
       'app/images/dest/**/*',
       'app/**/*.html',
+      'app/store/db.json',
     ],
     { base: 'app' }
   ) // Параметр "base" сохраняет структуру проекта при копировании
