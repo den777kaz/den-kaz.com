@@ -1,0 +1,112 @@
+{
+  "webdesign": [
+    {
+      "id": 1243,
+      "imageUrl": "./images/dest/australien-bg.png",
+      "title": "Australien Website",
+      "desc": "Das Schulprojekt",
+      "figma": "<iframe style='border: 1px solid rgba(0, 0, 0, 0.1);' width='800' height='450' src='https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F73B69tJyyn7Aji2JnhMMCf%2Faustralien-design%3Fnode-id%3D0%253A1' allowfullscreen></iframe>",
+      "links": [
+        {
+          "name": "Figma",
+          "path": "https://www.figma.com/file/73B69tJyyn7Aji2JnhMMCf/australien-design?node-id=0%3A1"
+        },
+        { "name": "PDF", "path": "./images/dest/pdf/aust.pdf" },
+        { "name": "Live", "path": "https://australien.netlify.app/" }
+      ]
+    },
+    {
+      "id": 2363,
+      "imageUrl": "./images/dest/pizza-bg.png",
+      "title": "Pizzeria",
+      "desc": "Landingpage",
+      "figma": "<iframe style='border: 1px solid rgba(0, 0, 0, 0.1);' width='800' height='450' src='https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FgeFsBL5WcNZO4aMc5JABmi%2FPizzeria%3Fnode-id%3D0%253A1' allowfullscreen></iframe'",
+      "links": [
+        {
+          "name": "Figma",
+          "path": "https://www.figma.com/file/geFsBL5WcNZO4aMc5JABmi/Pizzeria?node-id=0%3A1"
+        },
+        { "name": "PDF", "path": "./images/dest/pdf/pizza.pdf" }
+      ]
+    },
+    {
+      "id": 356778,
+      "imageUrl": "./images/dest/clinic-bg.png",
+      "title": "Klinik",
+      "desc": "Landingpage",
+      "figma": "<iframe style='border: 1px solid rgba(0, 0, 0, 0.1);' width='800' height='450' src='https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fkr7KTPzKxtiWOSvVvsxpNI%2Fclinic%3Fnode-id%3D0%253A1' allowfullscreen></iframe>",
+      "links": [
+        {
+          "name": "Figma",
+          "path": "https://www.figma.com/file/kr7KTPzKxtiWOSvVvsxpNI/clinic?node-id=0%3A1"
+        },
+        { "name": "PDF", "path": "./images/dest/pdf/clinic.pdf" }
+      ]
+    }
+  ],
+  "frontend": [
+    {
+      "id": 85434,
+      "imageUrl": "",
+      "title": "Fitness - Multiple page website",
+      "desc": "",
+      "tech": ["html", "scss", "gulp", "bootstrap 5", "animeJS"],
+      "links": [
+        { "name": "Github", "path": "https://github.com/den777kaz/fitmotion" },
+        {
+          "name": "Live",
+          "path": "https://friendly-brattain-354084.netlify.app"
+        }
+      ]
+    },
+    {
+      "id": 75567,
+      "imageUrl": "",
+      "title": "Australien - Landingpage",
+      "desc": "",
+      "tech": ["html", "css", "js", "gsap"],
+      "links": [
+        { "name": "Github", "path": "https://github.com/den777kaz/australien" },
+        { "name": "Live", "path": "https://australien.netlify.app/" }
+      ]
+    },
+    {
+      "id": 7552356767,
+      "imageUrl": "",
+      "title": "Website",
+      "desc": "",
+      "tech": ["js", "webpack"],
+      "links": [
+        {
+          "name": "Github",
+          "path": "https://github.com/den777kaz/js-study-webpack"
+        }
+      ]
+    },
+    {
+      "id": 36788,
+      "imageUrl": "./images/dest/fit-as.png",
+      "title": "Netflix Clone - Web Application",
+      "desc": "description",
+      "tech": ["react", "redux", "RestApi", "scss"],
+      "links": [
+        { "name": "Github", "path": "https://github.com/den777kaz/netflix" },
+        { "name": "Live", "path": "https://nitflex.netlify.app/home" }
+      ]
+    },
+    {
+      "id": 36788,
+      "imageUrl": "./images/dest/fit-as.png",
+      "title": "Small Pizza Shop - Web Application",
+      "desc": "description",
+      "tech": ["react", "redux", "fakeJSON", "scss"],
+      "links": [
+        {
+          "name": "Github",
+          "path": "https://github.com/den777kaz/react-pizza"
+        },
+        { "name": "Live", "path": "https://shop-pizza.netlify.app" }
+      ]
+    }
+  ]
+}

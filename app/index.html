@@ -50,7 +50,7 @@
                 data-words='["Webdesigner", "Frontend Developer"]'
                 ></span></p>
               <div class="hero-info__buttons">
-                <button class="contactBtm btn mt3rem" type="button"  data-aos="fade-in"
+                <button class="contactBtn btn mt3rem" type="button"  data-aos="fade-in"
                 data-aos-delay="500">Kontakt</button>
                 <a 
                 data-aos="fade-in" 
@@ -344,37 +344,58 @@
 
     </footer>
 
-    <!-- modal window -->
-    <div class="modal">
+    <!-- modal windows -->
+    <div id="portfolioModal" class="modal">
       <div class="modal__content">
         <span class="close-btn">X</span>
-
-        <form class="contactForm">
-
-          <div class="styledInput">
-            <input type="text" name="name" autocomplete="off" required>
-            <label for="name" class="labelName">
-            <span class="contentName">Name</span>
-            </label>
-          </div>
-          <div class="styledInput">
-            <input type="text" name="email" autocomplete="off" required>
-            <label for="email" class="labelName">
-            <span class="contentName">Email</span>
-            </label>
-          </div>
-          <div class="styledTextarea">
-            <textarea class="textarea" name="message"  id="message" placeholder="Message" required></textarea>
-          </div>
-          <div>
-            <button class="btn btn--contact" type="submit">Send</button>
-          </div>
-         
-        </form>
       </div>
     </div>
-    <script src="js/render.js"></script>
+    <div id="contactModal" class="modal">
+      <div class="modal__content">
+        <span class="close-btn">X</span>
+        <div class="form-wrapper">
+          <form class="contactForm">
+            <div class="text">
+              <h2>#kontakt</h2>
+              <h3>Ich freue mich auf Ihre Nachricht!</h3>
+            </div>
+            
+            <div class="styledInput">
+              <input id="name" type="text" name="name" autocomplete="off" required>
+              <label for="name" class="labelName">
+              <span class="contentName">Name</span>
+              </label>
+            </div>
+            <div class="styledInput">
+              <input id="email" type="text" name="email" autocomplete="off" required>
+              <label for="email" class="labelName">
+              <span class="contentName">Email</span>
+              </label>
+            </div>
+            <div class="styledTextarea">
+              <textarea class="textarea" name="message"  id="message" placeholder="Nachricht" required></textarea>
+            </div>
+            <input type="hidden" name="_subject" value="Hey! New Email!!!">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none">
+
+            <div class="relative">
+              <button class="btn btn--contact" type="submit">Absenden</button>
+              <div class="spinner">
+                <img src="./images/dest/spinner/Spinner-1s-200px.svg" alt="Loading...">
+              </div>
+            </div>
+
+            
+           
+          </form>
+        </div>
+       
+      </div>
+    </div>
+  
     <script src="js/app.min.js"></script>
+    <!-- <script src="js/validate.js"></script> -->
     <script>
       AOS.init({
         once: false,

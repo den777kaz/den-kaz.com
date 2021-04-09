@@ -29,6 +29,7 @@ function scripts() {
     // Пример подключения библиотеки
     'app/js/aos.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
     'app/js/type.js',
+    'app/js/validate.js',
     'app/js/app.js',
   ])
     .pipe(concat('app.min.js')) // Конкатенируем в один файл

@@ -37,7 +37,7 @@ function frontendWorkTemplate(imageUrl, title, techList, links, desc, id) {
 
   return layout;
 }
-
+// fetch data portfolio
 (async () => {
   try {
     const res = await fetch('../store/db.json');
@@ -84,7 +84,8 @@ function frontendWorkTemplate(imageUrl, title, techList, links, desc, id) {
     works.forEach((elem) => {
       data.webdesign.forEach((work) => {
         if (work.id === +elem.dataset.id) {
-          callModal(elem, work.figma);
+          // callModal(elem, work.figma);
+          callModal(elem, portModal, portContent, work.figma);
         }
       });
     });
@@ -94,55 +95,126 @@ function frontendWorkTemplate(imageUrl, title, techList, links, desc, id) {
 })();
 
 //MODAL WINDOW
-const modal = document.querySelector('.modal');
-const modalContent = document.querySelector('.modal__content');
-const contactBtn = document.querySelector('.contactBtm');
 
+const contactModal = document.getElementById('contactModal');
+const formContent = document.querySelector('#contactModal .modal__content');
+const contactBtn = document.querySelector('.contactBtn');
+
+const portModal = document.getElementById('portfolioModal');
+const portContent = document.querySelector('#portfolioModal .modal__content');
+
+// FORMS
+const contactForm = document.querySelector('.contactForm');
 const animTime = 300;
+const timeBox = document.createElement('div');
+timeBox.classList.add('renderContent');
 
-const box = document.createElement('div');
-box.classList.add('renderContent');
+function openModal(event, modalWindow, modalContent, template) {
+  console.log(event.target.tagName);
+  if (event.target.tagName !== 'A') {
+    modalWindow.style.display = 'flex';
+    console.log(template);
+    if (template !== null) {
+      timeBox.innerHTML = template;
+      modalContent.append(timeBox);
+    }
 
-function callModal(elem, content) {
-  elem.addEventListener('click', () => openModal(content));
-  modal.addEventListener('click', (e) => closeModal(e));
+    setTimeout(() => {
+      modalWindow.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      modalContent.classList.add('fadeDown');
+    }, 50);
+  }
 }
 
-function openModal(content) {
-  console.log(content);
-  modal.style.display = 'flex';
-  box.innerHTML = content;
-  modalContent.append(box);
+function closeModal(event, modalWindow, modalContent) {
+  const statusMessage = document.querySelector('.statusMsg');
 
-  setTimeout(() => {
-    modal.classList.add('show');
-    document.body.style.overflow = 'hidden';
-    modalContent.classList.add('fadeDown');
-  }, 50);
-}
-
-function closeModal(e) {
   if (
-    e.target.classList.contains('modal') ||
-    e.target.classList.contains('close-btn')
+    event.target.classList.contains('modal') ||
+    event.target.classList.contains('close-btn')
   ) {
     modalContent.classList.remove('fadeDown');
-    modal.classList.remove('show');
-    const box = document.querySelector('renderContent');
-    console.log(box);
+    modalWindow.classList.remove('show');
     setTimeout(() => {
-      modal.style.display = 'none';
+      if (statusMessage !== null) statusMessage.remove();
+
+      modalWindow.style.display = 'none';
       document.body.style.overflowY = 'auto';
     }, animTime);
   }
 }
 
+function callModal(target, modalWindow, modalContent, template) {
+  target.addEventListener('click', (event) =>
+    openModal(event, modalWindow, modalContent, template)
+  );
+  modalWindow.addEventListener('click', (event) =>
+    closeModal(event, modalWindow, modalContent)
+  );
+}
+
+// call contact form
+callModal(contactBtn, contactModal, formContent, null);
+
+// SUBMIT FORM
+const submitForm = (form) => {
+  const spinner = document.querySelector('.spinner');
+  const errorMessage = 'Sorry, etwas ist schief gelaufen :(',
+    // loadMessage = 'Loading...',
+    successMessage =
+      'Vielen Dank für Ihre Nachricht. Ich werde mich in kürze bei Ihnen melden!';
+
+  const statusMessage = document.createElement('div');
+  statusMessage.textContent = '';
+  statusMessage.classList.add('statusMsg');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    statusMessage.textContent = '';
+    spinner.classList.add('active');
+    // statusMessage.textContent = loadMessage;
+
+    const formData = new FormData(form);
+
+    let body = {};
+    formData.forEach((val, key) => {
+      body[key] = val;
+    });
+    // console.log(body);
+
+    fetch('https://formsubmit.co/ajax/ffc584b33e3f724962b9680ea74a7bf4', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(body),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          // console.log(data.message);
+          form.reset();
+          spinner.classList.remove('active');
+          form.appendChild(statusMessage);
+          statusMessage.textContent = successMessage;
+        }
+      })
+      .catch((error) => {
+        spinner.classList.remove('active');
+        form.appendChild(statusMessage);
+        statusMessage.classList.add('errorMsg');
+        statusMessage.textContent = errorMessage;
+        console.log(error);
+      });
+  });
+};
+submitForm(contactForm);
+
 // FORM modal
-const formTemplate = `<h1>form template</h1>`;
-callModal(contactBtn, formTemplate);
 
 // const textarea = document.querySelector('textarea');
-
 // textarea.addEventListener('keydown', autosize);
 
 // function autosize() {
@@ -154,46 +226,3 @@ callModal(contactBtn, formTemplate);
 //     el.style.cssText = 'height:' + el.scrollHeight + 'px';
 //   }, 0);
 // }
-
-const contactForm = document.querySelector('.contactForm');
-console.log(contactForm);
-
-const sendForm = (form) => {
-  const errorMessage = 'Something was wrong',
-    loadMessage = 'Loading...',
-    successMessage = 'thank you! We will contact you shortly!';
-
-  const statusMessage = document.createElement('div');
-  statusMessage.textContent = '';
-  statusMessage.style.cssText = 'font-size: 1.2rem;';
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    form.appendChild(statusMessage);
-    statusMessage.textContent = loadMessage;
-
-    const formData = new FormData(form);
-
-    let body = {};
-    formData.forEach((val, key) => {
-      body[key] = val;
-    });
-    // console.log(body);
-
-    fetch('https://formsubmit.co/ajax/k19den85@gmail.com', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(body),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        formName.reset();
-        console.log(data);
-      })
-      .catch((error) => console.log(error));
-  });
-};
-sendForm(contactForm);
