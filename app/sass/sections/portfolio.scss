@@ -17,7 +17,7 @@
 
     @media (max-width: 500px) {
       width: 100%;
-      min-width: 100%;
+      min-width: initial;
     }
 
     .text-vertcal {
@@ -78,7 +78,8 @@
         // font-size: 1.5rem;
       }
       .tech-list {
-        // display: flex;
+        display: flex;
+        flex-wrap: wrap;
 
         & > * + * {
           margin-left: 15px;
@@ -88,7 +89,7 @@
           display: inline-block;
           list-style: square;
           color: #d8dde7;
-          font-size: 1.1rem;
+          font-size: calc(0.9rem + 0.2vw);
         }
       }
       .links {
