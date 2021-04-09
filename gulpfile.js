@@ -24,14 +24,7 @@ function browsersync() {
 }
 
 function scripts() {
-  return src([
-    // Берём файлы из источников
-    // Пример подключения библиотеки
-    'app/js/aos.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
-    'app/js/type.js',
-    'app/js/validate.js',
-    'app/js/app.js',
-  ])
+  return src(['app/js/aos.js', 'app/js/type.js', 'app/js/app.js'])
     .pipe(concat('app.min.js')) // Конкатенируем в один файл
     .pipe(uglify()) // Сжимаем JavaScript
     .pipe(dest('app/js/')) // Выгружаем готовый файл в папку назначения
