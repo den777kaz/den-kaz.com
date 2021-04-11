@@ -97,7 +97,7 @@ function frontendWorkTemplate(imageUrl, title, techList, links, desc, id) {
 
 const contactModal = document.getElementById('contactModal');
 const formContent = document.querySelector('#contactModal .modal__content');
-const contactBtn = document.querySelector('.contactBtn');
+const contactBtn = document.querySelectorAll('.contactBtn');
 
 const portModal = document.getElementById('portfolioModal');
 const portContent = document.querySelector('#portfolioModal .modal__content');
@@ -152,7 +152,9 @@ function callModal(target, modalWindow, modalContent, template) {
 }
 
 // call contact form
-callModal(contactBtn, contactModal, formContent, null);
+contactBtn.forEach((btn) => {
+  callModal(btn, contactModal, formContent, null);
+});
 
 // SUBMIT FORM
 const submitForm = (form) => {

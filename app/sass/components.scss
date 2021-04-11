@@ -26,6 +26,16 @@
       // color: $headTextPrim;
     }
   }
+  &--dark {
+    border: 1px solid $headTextPrim2;
+    background-color: $bgPrim;
+    color: $headTextPrim2;
+
+    &:hover {
+      background-color: darken($bgPrim, 5%);
+      border-color: darken($headTextPrim2, 20%);
+    }
+  }
 }
 
 // modal

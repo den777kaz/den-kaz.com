@@ -46,6 +46,31 @@
   ],
   "frontend": [
     {
+      "id": 36788,
+      "imageUrl": "./images/dest/fit-as.png",
+      "title": "Small Pizza Shop - Web Application",
+      "desc": "description",
+      "tech": ["react", "redux", "fakeJSON", "scss"],
+      "links": [
+        {
+          "name": "Github",
+          "path": "https://github.com/den777kaz/react-pizza"
+        },
+        { "name": "Live", "path": "https://shop-pizza.netlify.app" }
+      ]
+    },
+    {
+      "id": 36788,
+      "imageUrl": "./images/dest/fit-as.png",
+      "title": "Netflix Clone - Web Application",
+      "desc": "description",
+      "tech": ["react", "redux", "RestApi", "scss"],
+      "links": [
+        { "name": "Github", "path": "https://github.com/den777kaz/netflix" },
+        { "name": "Live", "path": "https://nitflex.netlify.app/home" }
+      ]
+    },
+    {
       "id": 85434,
       "imageUrl": "",
       "title": "Fitness - Multiple page website",
@@ -68,44 +93,6 @@
       "links": [
         { "name": "Github", "path": "https://github.com/den777kaz/australien" },
         { "name": "Live", "path": "https://australien.netlify.app/" }
-      ]
-    },
-    {
-      "id": 7552356767,
-      "imageUrl": "",
-      "title": "Website",
-      "desc": "",
-      "tech": ["js", "webpack"],
-      "links": [
-        {
-          "name": "Github",
-          "path": "https://github.com/den777kaz/js-study-webpack"
-        }
-      ]
-    },
-    {
-      "id": 36788,
-      "imageUrl": "./images/dest/fit-as.png",
-      "title": "Netflix Clone - Web Application",
-      "desc": "description",
-      "tech": ["react", "redux", "RestApi", "scss"],
-      "links": [
-        { "name": "Github", "path": "https://github.com/den777kaz/netflix" },
-        { "name": "Live", "path": "https://nitflex.netlify.app/home" }
-      ]
-    },
-    {
-      "id": 36788,
-      "imageUrl": "./images/dest/fit-as.png",
-      "title": "Small Pizza Shop - Web Application",
-      "desc": "description",
-      "tech": ["react", "redux", "fakeJSON", "scss"],
-      "links": [
-        {
-          "name": "Github",
-          "path": "https://github.com/den777kaz/react-pizza"
-        },
-        { "name": "Live", "path": "https://shop-pizza.netlify.app" }
       ]
     }
   ]
