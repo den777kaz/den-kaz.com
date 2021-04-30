@@ -1,43 +1,6 @@
 let designWorks = document.querySelector('.webdesign .works');
 let frontendWorks = document.querySelector('.frontend .works');
 
-const formLayot = ``;
-const figmaFrame = ``;
-
-// WEBDESIGN TEMPLATE
-function webdesignWorkTemplate(imageUrl, title, links, desc, id) {
-  const layout = `<div class="work flex" data-id="${id}" data-aos="fade-up">
-    <div class="work__image">
-      <div class="box16-9">
-        <img src=${imageUrl} alt="">
-      </div>
-    </div>
-    <div class="work__content">
-      <h4>${title}</h4>
-      <p>${desc}</p>
-      <div class="links flex mt1rem">
-        ${links}
-      </div>
-    </div>
-  </div>`;
-
-  return layout;
-}
-
-// FRONTEND TEMPLATE
-function frontendWorkTemplate(imageUrl, title, techList, links, desc, id) {
-  const layout = `<div class="work flex" data-id="${id}" data-aos="fade-up">
-    <div class="work__content">
-      <h4>${title}</h4>
-      <ul class="flex tech-list">${techList.join(' ')}</ul>
-      <div class="links flex mt1rem">
-      ${links}
-      </div>
-    </div>
-  </div>`;
-
-  return layout;
-}
 // fetch data portfolio
 (async () => {
   try {
@@ -143,9 +106,10 @@ function closeModal(event, modalWindow, modalContent) {
 }
 
 function callModal(target, modalWindow, modalContent, template) {
-  target.addEventListener('click', (event) =>
-    openModal(event, modalWindow, modalContent, template)
-  );
+  target.addEventListener('click', (event) => {
+    openModal(event, modalWindow, modalContent, template);
+    if (template === null) validateForm();
+  });
   modalWindow.addEventListener('click', (event) =>
     closeModal(event, modalWindow, modalContent)
   );
@@ -212,61 +176,3 @@ const submitForm = (form) => {
   });
 };
 submitForm(contactForm);
-
-// FORM modal
-
-// const textarea = document.querySelector('textarea');
-// textarea.addEventListener('keydown', autosize);
-
-// function autosize() {
-//   let el = this;
-//   setTimeout(function () {
-//     el.style.cssText = 'height:auto; padding:0';
-//     // for box-sizing other than "content-box" use:
-//     // el.style.cssText = '-moz-box-sizing:content-box';
-//     el.style.cssText = 'height:' + el.scrollHeight + 'px';
-//   }, 0);
-// }
-
-// form validation
-function validate() {
-  const emailInput = document.getElementById('email'),
-    nameInput = document.getElementById('name'),
-    submitButton = document.querySelector('.contactForm button[type=submit]');
-
-  const nameLength = 4;
-  const errorName = document.createElement('span');
-  const errorEmail = document.createElement('span');
-
-  nameInput.addEventListener('input', () => {
-    setTimeout(() => {
-      if (nameInput.value.length > nameLength) {
-        errorName.remove();
-        submitButton.disabled = false;
-      } else {
-        errorName.textContent = 'min. 4 Zeichen';
-        errorName.classList.add('error');
-        nameInput.before(errorName);
-        submitButton.disabled = true;
-      }
-    }, 1000);
-  });
-
-  emailInput.addEventListener('input', (e) => {
-    const target = e.target.value;
-    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    setTimeout(() => {
-      if (emailRegex.test(target)) {
-        errorEmail.remove();
-        submitButton.disabled = false;
-      } else {
-        errorEmail.textContent = 'ungültige E-Mail';
-        errorEmail.classList.add('error');
-        emailInput.before(errorEmail);
-        submitButton.disabled = true;
-      }
-    }, 1000);
-  });
-}
-validate();

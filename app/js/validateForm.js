@@ -1,22 +1,33 @@
-function validate() {
+function validateForm() {
+  console.log('HALLOOOOOOOOO');
   const emailInput = document.getElementById('email'),
     nameInput = document.getElementById('name'),
     submitButton = document.querySelector('.contactForm button[type=submit]');
 
   const nameLength = 4;
+  let isDisabledNameInput = false;
+  let isDisabledEmailInput = false;
   const errorName = document.createElement('span');
   const errorEmail = document.createElement('span');
 
+  function buttonDisabledCheck() {
+    if (!isDisabledNameInput && !isDisabledEmailInput) {
+      submitButton.disabled = false;
+    } else submitButton.disabled = true;
+  }
+
   nameInput.addEventListener('input', () => {
     setTimeout(() => {
-      if (nameInput.value.length > nameLength) {
+      if (nameInput.value.length > nameLength - 1) {
         errorName.remove();
-        submitButton.disabled = false;
+        isDisabledNameInput = false;
+        buttonDisabledCheck();
       } else {
         errorName.textContent = 'min. 4 Zeichen';
         errorName.classList.add('error');
         nameInput.before(errorName);
-        submitButton.disabled = true;
+        isDisabledNameInput = true;
+        buttonDisabledCheck();
       }
     }, 1000);
   });
@@ -28,14 +39,15 @@ function validate() {
     setTimeout(() => {
       if (emailRegex.test(target)) {
         errorEmail.remove();
-        submitButton.disabled = false;
+        isDisabledEmailInput = false;
+        buttonDisabledCheck();
       } else {
         errorEmail.textContent = 'ungültige E-Mail';
         errorEmail.classList.add('error');
         emailInput.before(errorEmail);
-        submitButton.disabled = true;
+        isDisabledEmailInput = true;
+        buttonDisabledCheck();
       }
     }, 1000);
   });
 }
-validate();
